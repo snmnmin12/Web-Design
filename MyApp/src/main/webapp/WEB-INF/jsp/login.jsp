@@ -11,7 +11,7 @@
 						 </div>
 						 <div>
 							 <label for="password" class="sr-only">Password:</label>
-							 <input type =text id="password" name="password" placeholder="password" class="form-control"/>
+							 <input type =password id="password" name="password" placeholder="password" class="form-control"/>
 						 </div>
 						 <button class="btn btn-primary form-control">Login</button>
 					</form>

@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="container">
 
@@ -38,7 +39,7 @@
 			    <div class = "row">
                     <div class = "col-md-12">
                         <strong>${entry.reviewkey.username} </strong>
-                        <span class = "pull-right">${entry.date} </span>
+                        <span class = "pull-right"> <fmt:formatDate value="${entry.date}" pattern="yyyy-MM-dd HH:mm"/> </span>
                         <p>
                             ${entry.comments}
                         </p>

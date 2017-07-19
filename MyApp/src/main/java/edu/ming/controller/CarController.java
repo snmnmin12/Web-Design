@@ -6,6 +6,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -29,7 +30,7 @@ import edu.ming.service.StyleService;
 import edu.ming.service.UserService;
 
 @Controller
-@SessionAttributes("car")
+//@SessionAttributes("car")
 public class CarController {
 	@Autowired
 	private CarService carService;
@@ -41,6 +42,9 @@ public class CarController {
 	private UserService userService;
 	@Autowired
 	private ReviewService reviewService;
+	
+	@Autowired
+	MessageSource msgSource;
 	
 	@RequestMapping(value="/all", method = RequestMethod.GET)
 	public String list(ServletRequest context, ModelMap models) {
@@ -70,7 +74,6 @@ public class CarController {
 		System.out.println(reviews.size());
 		return "details";
 	}
-	
 	
 	@RequestMapping(value="/details/{id}/comment/add")
 	public String detail(@PathVariable int id, @ModelAttribute Review singleReview, BindingResult result) {
@@ -157,10 +160,11 @@ public class CarController {
 		User user = userService.find(username);
 		if (user == null || !user.getPassword().equals(password))
 		{
-			models.put("loginError", "User name or password is wrong");
+			String msg = msgSource.getMessage("error.field", null, "Hello world!", null);
+			models.put("loginError", msg);
 			return "login";
 		}else {
-			session.setAttribute("loggedInUser", user);
+			models.put("loggedInUser", user);
 		}
 		return "welcome";
 	}

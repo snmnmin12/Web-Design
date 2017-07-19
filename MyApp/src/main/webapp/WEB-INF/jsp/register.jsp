@@ -12,21 +12,21 @@
 		 <div class="form-group row">
 		 <label class="col-md-2 control-label">Password </label>
 			 <div class="col-md-5">
-			 	<form:input type = "text" class = "form-control"  path="password"/>
+			 	<form:input type = "password" class = "form-control"  path="password"/>
 			 </div>
 		 </div>
 	
 		<div class="form-group row">
 		 <label class="col-md-2 control-label">Phone </label>
 			 <div class="col-md-5">
-			 	<form:input type = "text" class = "form-control"  path="phone"/>
+			 	<form:input type = "text" pattern="[0-9]+" class = "form-control"  path="phone"/>
 			 </div>
 		 </div>
 		 
 	    <div class="form-group row">
 		 <label class="col-md-2 control-label">Email </label>
 			 <div class="col-md-5">
-			 	<form:input type = "text" class = "form-control"  path="email"/>
+			 	<form:input type = "email" class = "form-control"  path="email"/>
 			 </div>
 		 </div>
 		 
@@ -44,8 +44,5 @@
 		 </div>
 	</form:form>
 </div>
-
-
-
 
 <%@ include file="/resources/layout/footer.jsp" %>
