@@ -38,6 +38,7 @@ In addition to that, all the technical parameters are also showed such as style,
 ![](img/detail-1.png)
  
 ![](img/detail-2.png)
+![](img/detail-3.png)
 
 User can also give comments for this particular car. All comments/reviews for the selected car are listed there with usernames and timestamp when the comments are generated.
 
