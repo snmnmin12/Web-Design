@@ -1,0 +1,53 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= blog.title %></div>
+    <div class="ui top attached ">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %>" ><br>
+            <div class="content">
+                <span><%= blog.created.toDateString() %></span>
+                <p class="pull-right">
+                        <em>Submitted By <%= blog.author.username %></em>
+                </p>
+            </div>
+            <div class="description">
+                <p><%- blog.body %></p>
+            </div>
+            
+            <% if(currentUser && blog.author.id.equals(currentUser._id)){ %>
+                <br>
+                <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+                <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                    <button class="ui red basic button">Delete</button>
+                </form>
+            <% }%>
+        </div>
+    </div>
+        
+        <br>
+        <br>
+        
+        <div class="well">
+                
+                <a class="ui primary button" href="/blogs/<%= blog._id %>/comments/new">Add New Comment</a>
+                <br>
+                <br>
+                
+                <% blog.comments.forEach(function(comment){ %>
+                
+                    <div class="row">
+                        <div class="ui one column">
+                            <strong><%= comment.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+                                <%= comment.text %> 
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                <% }) %>
+        </div>
+</div>
+
+<% include ../partials/footer %>
