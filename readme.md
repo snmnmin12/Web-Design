@@ -1,5 +1,5 @@
 ## Introduction
-Some interesting web deigned works
+Some interesting web designe works
 
 ## Blogs
 
