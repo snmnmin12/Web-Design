@@ -3,7 +3,7 @@
 <div class="ui main text container">
     <div class="ui huge header"> New Blog </div>
     
-        <form class="ui form" action="/blogs" method="POST">
+        <form class="ui form" id="my-form" action="/blogs" method="POST">
         <div class="field">
             <label>Title</label>
             <input type="text" name="blog[title]" placeholder="title">
@@ -14,9 +14,9 @@
         </div>
         <div class="field">
             <label>Blog Content</label>
-            <textarea name="blog[body]"></textarea>
+            <textarea rows="50" cols="100" name="blog[body]"></textarea>
         </div>
-        <input class="ui violet big basic button" id="submit-code" type="submit">
+        <input class="ui violet big basic button"  type="submit">
     </form>
     
     

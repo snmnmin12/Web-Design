@@ -10,5 +10,6 @@ This is the screenshot for home pages to display all the blog content it has and
 
 ![](img/1.3.jpeg)
 
+The format is preserved, so user can copy&past from word document and line break is preserved. Also, math formula can be displayed in the post.
 
-
+![](img/1.4.jpeg)

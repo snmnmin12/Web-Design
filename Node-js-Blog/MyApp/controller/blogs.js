@@ -73,6 +73,8 @@
             if(err){
                 res.redirect("/blogs");
             } else {
+                var regex = /<br\s*[\/]?>/gi;
+                foundBlog.body = foundBlog.body.replace(/<br ?\/?>/g, "\n");
                 res.render("blogs/edit", {blog: foundBlog});
             }
         });
